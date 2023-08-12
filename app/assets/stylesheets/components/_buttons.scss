@@ -1,0 +1,14 @@
+.primary-btn {
+  padding: 7px 10px;
+  background-color: $turquoise;
+  border: 2px solid $turquoise;
+  border-radius: 5px;
+  font-weight: 500;
+  color: $white;
+
+  &:hover {
+    background-color: $dark-turquoise;
+    color: white;
+    border: 2px solid $dark-turquoise;
+  }
+}
