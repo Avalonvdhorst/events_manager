@@ -1,0 +1,6 @@
+<%= simple_form_for @event, data: { controller: 'flatpickr' } do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+<% end %>
