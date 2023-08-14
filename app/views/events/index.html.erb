@@ -1,7 +1,20 @@
-<div class="d-flex">
-  <div>
-    <h1 class="header">Your upcoming events: </h1>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-7">
+      <h1 class="header my-5">Your upcoming events: </h1>
+      <div
+        id="root"
+        data-controller="react"
+        data-react-events-value="<%= @events.to_json %>">
+      </div>
+      <% @events.each do |event| %>
+        <div class="event-card">
 
+        </div>
+      <% end %>
+    </div>
+    <div class="col-12 col-lg-5">
+      <%= render 'calendar' %>
+    </div>
   </div>
-  <div></div>
 </div>
