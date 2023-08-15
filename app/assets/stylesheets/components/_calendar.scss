@@ -1,17 +1,21 @@
-.sticky-calendar {
-  position: sticky;
-  top: 150px;
+.calendar-box {
+  background-color: $light-blue;
+  border-radius: 16px;
+  padding: 28px 16px;
+  margin: 48px 16px;
+  height: 90vh;
 }
 
 .day-marked {
-  background-color: $light-blue;
+  background-color: white;
   border-radius: 10px;
   margin: 0px 7px;
   transition: 0.3s ease-in-out;
 }
 
 .day-marked:hover {
-  background-color: #a9d6ff;
+  background-color: $dark-turquoise;
+  color: white;
   font-weight: bold;
   cursor: pointer;
 }
@@ -30,9 +34,8 @@
 
 .calendar-title {
   color: $dark-blue;
-  font-size: 24px;
+  font-size: 2.5rem;
   font-family: $headers-font;
-  font-weight: bold;
 }
 
 .calendar-heading i {
@@ -54,12 +57,12 @@
 }
 
 .simple-calendar .prev-month {
-  background-color: white;
+  background-color: $light-blue;
   color: $light-gray
 }
 
 .simple-calendar .next-month {
-  background-color: white;
+  background-color: $light-blue;
   color: $light-gray;
 }
 
@@ -68,7 +71,6 @@
 }
 
 .simple-calendar .today {
-  background-color: white;
   color: $turquoise;
   font-weight: bold;
 }

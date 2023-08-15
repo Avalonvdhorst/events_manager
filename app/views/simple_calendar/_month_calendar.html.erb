@@ -1,7 +1,7 @@
 <div class="simple-calendar">
-  <div class="calendar-heading d-flex align-items-center justify-content-center my-5">
+  <div class="calendar-heading d-flex align-items-center justify-content-center mt-3 mb-5">
     <%= link_to '<i class="fa-solid fa-chevron-left"></i>'.html_safe, calendar.url_for_previous_view %>
-    <span class="calendar-title mx-5 mb-1"><%= t('date.month_names')[start_date.month].upcase %></span>
+    <span class="calendar-title mx-5 mb-1"><%= t('date.month_names')[start_date.month] %></span>
     <%= link_to '<i class="fa-solid fa-chevron-right"></i>'.html_safe, calendar.url_for_next_view %>
   </div>
 
