@@ -7,15 +7,16 @@
 }
 
 .day-marked {
-  background-color: white;
+  background-color: $turquoise;
+  color: white;
   border-radius: 10px;
   margin: 0px 7px;
   transition: 0.3s ease-in-out;
 }
 
 .day-marked:hover {
-  background-color: $dark-turquoise;
-  color: white;
+  background-color: $white;
+  color: $dark-turquoise;
   font-weight: bold;
   cursor: pointer;
 }
@@ -36,6 +37,7 @@
   color: $dark-blue;
   font-size: 2.5rem;
   font-family: $headers-font;
+  font-weight: bold;
 }
 
 .calendar-heading i {

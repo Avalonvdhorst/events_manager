@@ -1,8 +1,5 @@
 body {
-  background-color: white;
-}
-
-.header {
-  color: $dark-blue;
-  margin-left: 16px;
+  background-image: url("background.png");
+  background-position: center;
+  background-size: cover;
 }
