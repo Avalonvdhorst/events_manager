@@ -2,6 +2,12 @@ import React from 'react'
 import Event from './event'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import {far} from "@fortawesome/free-regular-svg-icons"
+import {fas} from "@fortawesome/free-solid-svg-icons"
+import {fab} from "@fortawesome/free-brands-svg-icons"
+import {library} from "@fortawesome/fontawesome-svg-core"
+import "@fortawesome/fontawesome-free"
+library.add(far, fas, fab)
 
 const Events = ({events}) => {
   return React.createElement(

@@ -6,4 +6,8 @@ class Event < ApplicationRecord
     errors.add(:start_date, "Can't be in the past") if start_date.present? && start_date < Date.today
     errors.add(:end_date, "Can't be in the past") if end_date.present? && end_date < Date.today
   end
+
+  def date_range
+    (start_date..end_date).to_a
+  end
 end

@@ -22,8 +22,10 @@
 }
 
 .current-day-marked {
-  border: 5px solid $turquoise;
+  outline: 5px solid $dark-turquoise;
   font-weight: bold;
+  background-color: white;
+  color: $turquoise;
 }
 
 .calendar-day {

@@ -1,6 +1,6 @@
 <div class="sticky-calendar">
   <%= month_calendar(events: @events, attribute: :start_date) do |date, events| %>
-    <% day_events = @events.where(start_date: date) %>
-    <div class="calendar-day <%= "day-marked" if day_events != [] %>" ><%= date.day %></div>
+    <% day_events = @events.select {|event| event.date_range.include?(date)} %>
+    <div class="calendar-day <%= "day-marked" if day_events != [] %>" data-full-date="<%= date %>" data-calendar-target="day" data-action="click->calendar#load" ><%= date.day %></div>
   <% end %>
 </div>

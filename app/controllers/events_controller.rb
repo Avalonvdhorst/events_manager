@@ -1,6 +1,10 @@
 class EventsController < ApplicationController
   def index
     @events = Event.all
+    if params[:date]
+      @events = Event.first
+      render json: @events
+    end
   end
 
   def new
