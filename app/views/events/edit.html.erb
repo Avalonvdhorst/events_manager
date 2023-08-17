@@ -1,7 +1,10 @@
 <div class="container">
   <div class="row justify-content-center my-5">
     <div class="col-12 col-lg-6">
-      <h2 class="form-header mb-5">Edit this event</h2>
+      <div class="d-flex align-items-center mb-5 ">
+        <%= link_to '<i class="fa-solid fa-chevron-left"></i>'.html_safe, :back %>
+        <h2 class="form-header ms-3">Edit this event</h2>
+      </div>
       <%= render 'form' %>
     </div>
   </div>

@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import EventsContainer from "../components/eventsContainer"
 
 export default class extends Controller {
-  static targets = ["day", "events"]
+  static targets = ["day"]
 
   load(event) {
     const fullDate = event.currentTarget.dataset.fullDate
@@ -17,12 +17,17 @@ export default class extends Controller {
     fetch(url, {headers: {"Accept": "text/plain"}})
       .then(response => response.text())
       .then((data) => {
-        const newEvents = JSON.parse(data)
-        const eventsArray = Array.isArray(newEvents) ? newEvents : [newEvents]
-        ReactDOM.render(
-          React.createElement(EventsContainer, {events: eventsArray}),
-          document.getElementById('root')
-        )
+        const { events, monthly } = JSON.parse(data)
+        const eventsArray = Array.isArray(events) ? events : [events]
+        const monthlyArray = Array.isArray(monthly) ? monthly : [monthly]
+        this.renderEvents(eventsArray, monthlyArray)
       })
+  }
+
+  renderEvents(eventsArray, monthlyArray) {
+    ReactDOM.render(
+      React.createElement(EventsContainer, {events: eventsArray, monthlyEvents: monthlyArray}),
+      document.getElementById('root')
+    )
   }
 }

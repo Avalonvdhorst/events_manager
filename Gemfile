@@ -80,3 +80,4 @@ end
 # gems added after create
 
 gem "simple_calendar", "~> 2.4"
+gem 'pry', '~> 0.14.2'

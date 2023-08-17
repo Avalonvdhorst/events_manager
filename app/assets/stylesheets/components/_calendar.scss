@@ -6,6 +6,11 @@
   height: 90vh;
 }
 
+.fa-chevron-left, .fa-chevron-right {
+  font-size: 24px;
+  color: $dark-blue;
+}
+
 .day-marked {
   background-color: $turquoise;
   color: white;

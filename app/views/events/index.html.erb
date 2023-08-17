@@ -1,10 +1,11 @@
 <div class="container" data-controller="calendar">
   <div class="row">
-    <div class="col-12 col-lg-7" data-calendar-target="events">
+    <div class="col-12 col-lg-7">
       <div
         id="root"
         data-controller="react"
-        data-react-events-value="<%= @events.to_json %>">
+        data-react-events-value="<%= @events.to_json %>"
+        data-react-monthly-value="<%= @monthly_events.to_json %>">
       </div>
     </div>
     <div class="col-12 col-lg-5">

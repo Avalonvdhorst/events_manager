@@ -6,14 +6,13 @@ import EventsContainer from "../components/eventsContainer"
 
 export default class extends Controller {
   static values = {
-    events: Array
+    events: Array,
+    monthly: Array
   }
 
   connect() {
-    const events = this.eventsValue
-
     ReactDOM.render(
-      React.createElement(EventsContainer, {events: events}),
+      React.createElement(EventsContainer, {events: this.eventsValue, monthlyEvents: this.monthlyValue}),
       document.getElementById('root')
     )
   }

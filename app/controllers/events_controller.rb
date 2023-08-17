@@ -1,10 +1,10 @@
 class EventsController < ApplicationController
   def index
     @events = Event.all
-    if params[:date]
-      @events = @events.select { |event| event.date_range.include?(Date.parse(params[:date])) }
-      render json: @events
-    end
+    current_month = params[:start_date] ? Date.parse(params[:start_date]).month : Date.today.month
+    @monthly_events = @events.select { |event| event.date_range.any? { |date| date.month == current_month } }
+
+    build_events_json if params[:date]
   end
 
   def new
@@ -37,6 +37,16 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def build_events_json
+    full_date = Date.parse(params[:date])
+    @events = @events.select { |event| event.date_range.include?(full_date) }
+    @monthly_events = Event.all.select { |event| event.date_range.any? { |date| date.month == full_date.month } }
+    render json: {
+      events: @events,
+      monthly: @monthly_events
+    }
+  end
 
   def event_params
     params.require(:event).permit(:title, :description, :start_date, :end_date)
