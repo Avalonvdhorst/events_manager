@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from './link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPencilAlt, faTrash } from '@fortawesome/free-solid-svg-icons'
 import {far} from "@fortawesome/free-regular-svg-icons"
@@ -37,17 +38,19 @@ const Event = ({event}) => {
       React.createElement('p', {className: 'end-date'}, `- Ends on: ${endMonth} ${endDay}`)
     ),
 
-    React.createElement(
-      'div',
-      {className: 'actions'},
-      React.createElement(
-        'a', {className: 'edit-btn', href: `/events/${event.id}/edit`},
-        React.createElement(FontAwesomeIcon, {icon: faPencilAlt})
-      ),
-      React.createElement(
-        'a', {className: 'delete-btn', href: `/events/${event.id}/delete`},
-        React.createElement(FontAwesomeIcon, {icon: faTrash})
-      )
+    React.createElement( 'div', {className: 'actions'},
+      React.createElement(Link, {
+        href: `/events/${event.id}/edit`,
+        className: 'edit-btn',
+        icon: React.createElement(FontAwesomeIcon, {icon: faPencilAlt})
+      }),
+      React.createElement(Link, {
+        href: `/events/${event.id}`,
+        className: 'delete-btn',
+        icon: React.createElement(FontAwesomeIcon, {icon: faTrash}),
+        method: "delete",
+        confirmMessage: "Are you sure?"
+      })
     )
   )
 };

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Events from './events'
+import Link from './link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import {far} from "@fortawesome/free-regular-svg-icons"
@@ -21,11 +22,11 @@ const EventsContainer = ({events, monthlyEvents}) => {
         'Your upcoming events:',
       ),
       React.createElement('div', {className: 'create-event mt-3 mb-4'},
-        React.createElement(
-          'a',
-          {className: 'new-btn', href: `/events/new`},
-          React.createElement(FontAwesomeIcon, {icon: faPlus})
-        ),
+        React.createElement(Link, {
+          href: '/events/new',
+          className: 'new-btn',
+          icon: React.createElement(FontAwesomeIcon, {icon: faPlus})
+        })
       )
     ),
     React.createElement(
