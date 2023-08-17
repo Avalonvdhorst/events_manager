@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     if params[:date]
-      @events = Event.first
+      @events = @events.select { |event| event.date_range.include?(Date.parse(params[:date])) }
       render json: @events
     end
   end

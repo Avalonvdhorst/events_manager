@@ -4,8 +4,6 @@ import Events from './events'
 const EventsContainer = ({events}) => {
 
   const [localEvents, setLocalEvents] = useState(events)
-  console.log(events)
-  console.log(localEvents)
 
   useEffect(() => {
     if (events !== localEvents) {
