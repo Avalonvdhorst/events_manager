@@ -2,7 +2,7 @@
   color: $dark-blue;
 }
 
-#new_event input[type="text"] {
+#new_event input[type="text"], input[type="hidden"] {
   border: none;
   border-bottom: 2px solid $light-gray;
   &:focus {
@@ -13,5 +13,25 @@
 
 #new_event label {
   margin-top: 32px;
+  color: $dark-blue;
+}
+
+.recurring-box {
+  display: flex;
+  align-items: center;
+
+  p {
+    margin-bottom: -9px;
+    font-weight: 500;
+    margin-right: 24px;
+    color: $dark-blue
+  }
+}
+
+#new_event .recurring-box label {
+  color: transparent;
+}
+
+.frequency-period p {
   color: $dark-blue;
 }

@@ -1,4 +1,7 @@
 class Event < ApplicationRecord
+  has_one :frequency
+  accepts_nested_attributes_for :frequency, allow_destroy: true
+
   validates :title, :description, :start_date, :end_date, presence: true
   validate :start_and_end_date_not_in_past
 

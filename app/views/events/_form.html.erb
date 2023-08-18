@@ -3,5 +3,21 @@
   <%= f.input :description %>
   <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } %>
   <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" } } %>
-  <%= f.submit "Save", class: "primary-btn" %>
+
+  <% if f.object.new_record? %>
+    <div data-controller="occurrence">
+      <div class="recurring-box">
+        <p>Is this a recurring event?</p>
+        <%= f.input :recurring, input_html: { class: "toggle", data: { action: "input->occurrence#show" } }  %>
+      </div>
+
+      <%= f.fields_for :frequency do |frequency_field| %>
+        <div class="frequency-period d-none" data-occurrence-target="occurrenceField">
+          <p class="mt-3 mb-4">Please select how often this event will occur:</p>
+          <%= frequency_field.input :period, as: :select, collection: Frequency::PERIODS, label: false %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <%= f.submit "Save", class: "primary-btn mt-3" %>
 <% end %>
