@@ -2,14 +2,14 @@
 Event.destroy_all
 
 Event.create(title: 'Project setup',
-  description: 'Set up of the project for the technical interview with Factorial',
-  start_date: Date.new(2023, 8, 10),
-  end_date: Date.new(2023, 8, 10))
+  description: 'Finish the project for the technical interview with Factorial',
+  start_date: Date.new(2023, 8, 22),
+  end_date: Date.new(2023, 8, 22))
 
 Event.create(title: 'Housewarming',
   description: 'Housewarming of Dianas new flat in Gracia',
-  start_date: Date.new(2023, 8, 21),
-  end_date: Date.new(2023, 8, 21))
+  start_date: Date.new(2023, 8, 22),
+  end_date: Date.new(2023, 8, 22))
 
 Event.create(title: 'Birthday',
   description: 'My own 35th birthday party, a picnic on the beach',

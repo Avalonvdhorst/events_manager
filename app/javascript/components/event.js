@@ -49,7 +49,7 @@ const Event = ({event}) => {
         className: 'delete-btn',
         icon: React.createElement(FontAwesomeIcon, {icon: faTrash}),
         method: "delete",
-        confirmMessage: "Are you sure?"
+        confirmMessage: "Are you sure? Deleting this event will also delete any related recurring events"
       })
     )
   )
