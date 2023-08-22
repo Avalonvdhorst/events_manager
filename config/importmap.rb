@@ -16,3 +16,8 @@ pin "@fortawesome/react-fontawesome", to: "https://ga.jspm.io/npm:@fortawesome/r
 pin "@fortawesome/fontawesome-svg-core", to: "https://ga.jspm.io/npm:@fortawesome/fontawesome-svg-core@6.4.2/index.mjs"
 pin "prop-types", to: "https://ga.jspm.io/npm:prop-types@15.8.1/index.js"
 pin "react", to: "https://ga.jspm.io/npm:react@18.2.0/index.js"
+# if Rails.env.development?
+#   pin "EventsContainer", to: "/app/javascript/components/eventsContainer.js"
+# else
+#   pin "EventsContainer", to: "/assets/eventsContainer.js"
+# end
